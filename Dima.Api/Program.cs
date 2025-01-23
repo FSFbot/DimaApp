@@ -1,5 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(x=> x.CustomSchemaIds(n=> n.FullName));
+
+builder.Services.AddTransient<Handler>();
+
+var app = builder.Build( );
+
+app.UseSwagger();
+app.UseSwaggerUI();
+    
+
 //Request - Requisição  GET, POST, PUT e DELETE 
 // Obter, Criar, Atualizar, Deletar
 // Get - Não tem corpo; ja os outros normalmente possuem Json como corpo
