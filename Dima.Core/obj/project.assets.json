@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desenvolvimento\\aplications\\Dima\\Dima.Core\\Dima.Core.csproj",
+      "projectUniqueName": "D:\\Desenvolvimento\\aplications\\DimaApp\\Dima.Core\\Dima.Core.csproj",
       "projectName": "Dima.Core",
-      "projectPath": "D:\\Desenvolvimento\\aplications\\Dima\\Dima.Core\\Dima.Core.csproj",
+      "projectPath": "D:\\Desenvolvimento\\aplications\\DimaApp\\Dima.Core\\Dima.Core.csproj",
       "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-      "outputPath": "D:\\Desenvolvimento\\aplications\\Dima\\Dima.Core\\obj\\",
+      "outputPath": "D:\\Desenvolvimento\\aplications\\DimaApp\\Dima.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config"
