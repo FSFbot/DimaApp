@@ -1,12 +1,16 @@
 using Dima.Api.Data;
+using Dima.Api.Handlers;
+using Dima.Core.Handlers;
 using Dima.Core.Models;
+using Dima.Core.Requests.Categories;
+using Dima.Core.Responses;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(x=> x.CustomSchemaIds(n=> n.FullName));
 
-builder.Services.AddTransient<Handler>();
+builder.Services.AddTransient<ICategoryHandler, CategoryHandler>();
 
 var cnnStr = builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
 
@@ -22,44 +26,40 @@ app.UseSwaggerUI();
 // Get - Não tem corpo; ja os outros normalmente possuem Json como corpo
 app.MapPost(
     "/v1/categories",
-    (Request request, Handler handler) 
-        =>handler.Handle(request)) 
+   async (CreateCategoryRequest request, ICategoryHandler handler) 
+        =>await handler.CreateAsync(request)) 
     .WithName("Categories: Create")
     .WithSummary("Cria uma nova categoria")
-    .Produces<Response>();
+    .Produces<Response<Category?>>();
+
+app.MapPut(
+        "/v1/categories/{id}",
+        async (long id, UpdataCategoryRequest request, ICategoryHandler handler)
+            => 
+        {
+            request.Id = id;
+            return await handler.UpdateAsync(request);
+        }) 
+    .WithName("Categories: Create")
+    .WithSummary("Cria uma nova categoria")
+    .Produces<Response<Category?>>();
+
+app.MapDelete(
+        "/v1/categories/{id}",
+        async(long id,  ICategoryHandler handler)
+            =>
+        {
+            var request = new DeleteCategoryRequest
+            {
+                Id = id
+            };
+            return await handler.DeleteAsync(request);
+        }) 
+    .WithName("Categories: Create")
+    .WithSummary("Cria uma nova categoria")
+    .Produces<Response<Category?>>();
 
 
 app.Run();
 
-//Request
-public class Request
-{
-    public string Title { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-}
-//Response
-public class Response
-{
-    public long Id { get; set; }
-    public string Title { get; set; } = String.Empty;
-}
-//Handler
 
-public class Handler(AppDbContext context)
-{
-    public Response Handle(Request request)
-    {
-        var category = new Category
-        {
-            Title = request.Title,
-            Description = request.Description
-        };
-        context.Categories.Add(category);
-        context.SaveChanges();
-        return new Response
-        {
-            Id= 4,
-            Title = request.Title
-        };
-    }
-}
