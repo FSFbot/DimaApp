@@ -2,7 +2,7 @@
 
 namespace Dima.Core.Requests.Categories;
 
-public class UpdataCategoryRequest: Request
+public class UpdateCategoryRequest: Request
 {
     public long Id { get; set; }
     

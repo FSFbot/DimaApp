@@ -1,7 +1,7 @@
 ﻿namespace Dima.Core.Requests.Categories;
 
-public class GetAllCategoriesRequest : PagedRequests
+public class GetCategoryByIdRequest : Request
 {
+    public long Id { get; set; }
     public string userId { get; set; }
-    public int Page { get; set; }
 }
