@@ -17,4 +17,5 @@ public class Transaction
     public Category Category { get; set; } = null!;
     
     public string UserId { get; set; } = string.Empty;
+    public long CategoryId { get; set; }
 }

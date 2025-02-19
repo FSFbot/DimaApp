@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "hkq/AZnNx0PmSrDF+bV1L1e8pK+oN/eje7PG5aFzcno=",
+  "Hash": "gps9s4MbiJDL4kF8t6g98U6UqyBwlyb6cuaiKyJu1fE=",
   "Source": "Dima.Api",
   "BasePath": "_content/Dima.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

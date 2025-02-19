@@ -138,3 +138,6 @@ D:\Desenvolvimento\aplications\DimaApp\Dima.Api\obj\Debug\net8.0\refint\Dima.Api
 D:\Desenvolvimento\aplications\DimaApp\Dima.Api\obj\Debug\net8.0\Dima.Api.pdb
 D:\Desenvolvimento\aplications\DimaApp\Dima.Api\obj\Debug\net8.0\Dima.Api.genruntimeconfig.cache
 D:\Desenvolvimento\aplications\DimaApp\Dima.Api\obj\Debug\net8.0\ref\Dima.Api.dll
+D:\Desenvolvimento\aplications\DimaApp\Dima.Api\bin\Debug\net8.0\Dima.Api.staticwebassets.endpoints.json
+D:\Desenvolvimento\aplications\DimaApp\Dima.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Desenvolvimento\aplications\DimaApp\Dima.Api\obj\Debug\net8.0\staticwebassets\msbuild.Dima.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

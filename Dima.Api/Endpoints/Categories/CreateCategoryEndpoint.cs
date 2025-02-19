@@ -20,9 +20,10 @@ public class CreateCategoryEndpoint : IEndpoint
         ICategoryHandler handler,
         CreateCategoryRequest request)
     {
+        request.UserId = "Felipe@teste.io";
         var result = await handler.CreateAsync(request);
         return result.IsSuccess
-            ? TypedResults.Created($"/{result.Data?.Id}", result.Data)
+            ? TypedResults.Created($"/{result.Data?.Id}", result)
             : TypedResults.BadRequest(result.Data);
     }
 
