@@ -16,7 +16,7 @@ public class CreateCategoryEndpoint : IEndpoint
             .WithDescription("Cria uma nova categoria").WithOrder(1)
             .Produces<Core.Responses.Response<Category?>>();
 
-    public static async Task<IResult> HandleAsync(
+    private static async Task<IResult> HandleAsync(
         ICategoryHandler handler,
         CreateCategoryRequest request)
     {
