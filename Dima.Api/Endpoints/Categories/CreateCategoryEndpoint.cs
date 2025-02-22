@@ -26,5 +26,4 @@ public class CreateCategoryEndpoint : IEndpoint
             ? TypedResults.Created($"/{result.Data?.Id}", result)
             : TypedResults.BadRequest(result.Data);
     }
-
 }

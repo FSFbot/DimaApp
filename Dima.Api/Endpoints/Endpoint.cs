@@ -13,7 +13,7 @@ public static class Endpoint
 
         var categoryEndpoints = endpoints.MapGroup("v1/categories")
             .WithTags("Categories");
-        //.RequireAuthorization();
+     
 
         categoryEndpoints.MapEndpoint<CreateCategoryEndpoint>();
         categoryEndpoints.MapEndpoint<UpdateCategoryEndpoint>();
